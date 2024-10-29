@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider de 3 Diapositivas</title>
+    <style>
+        /* Estilos básicos para el contenedor y el slider */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 300%;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Contenedor de cada iframe */
+        .iframe-container,
+        .tradingview-widget-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Botones de navegación */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <!-- Contenedor de los slides -->
+    <div class="slides">
+        <!-- Slide 1: iframe -->
+        <div class="slide">
+            <div class="iframe-container">
+                <iframe src="https://andres28m.github.io/choch/" title="Contenido incrustado" width="400" height="100%" style="max-height: 910px;"></iframe>
+            </div>
+        </div>
+
+        <!-- Slide 2: TradingView Widget -->
+        <div class="slide">
+               <iframe src="https://es.cointelegraph.com" title="Contenido incrustado" width="400" height="100%" style="max-height: 910px;"></iframe>
+        </div>
+
+        <!-- Slide 3: Otro iframe o contenido adicional -->
+        <div class="slide">
+            <div class="iframe-container">
+                <iframe src="https://andres28m.github.io/choch/" title="Otro contenido" width="400" height="100%" style="max-height: 910px;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<!-- Script de navegación entre slides -->
+<script>
+    let currentSlide = 0;
+
+    function changeSlide(direction) {
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+
+        currentSlide += direction;
+
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        } else if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+</script>
+
+</body>
+</html>
