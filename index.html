@@ -57,6 +57,75 @@
 <body>
 
 <div class="slider-container">
+    <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+            {
+                "symbols": [
+                    {
+                        "proName": "FOREXCOM:SPXUSD",
+                        "title": "S&P 500 Index"
+                    },
+                    {
+                        "proName": "FOREXCOM:NSXUSD",
+                        "title": "US 100 Cash CFD"
+                    },
+                    {
+                        "proName": "FX_IDC:EURUSD",
+                        "title": "EUR to USD"
+                    },
+                    {
+                        "proName": "BITSTAMP:BTCUSD",
+                        "title": "Bitcoin"
+                    },
+                    {
+                        "proName": "BITSTAMP:ETHUSD",
+                        "title": "Ethereum"
+                    },
+                    {
+                        "description": "GOLD",
+                        "proName": "TVC:GOLD"
+                    },
+                    {
+                        "description": "GOLD USA",
+                        "proName": "COMEX:GC1!"
+                    },
+                    {
+                        "description": "TSLA",
+                        "proName": "NASDAQ:TSLA"
+                    },
+                    {
+                        "description": "AAPL",
+                        "proName": "NASDAQ:AAPL"
+                    },
+                    {
+                        "description": "AMZN",
+                        "proName": "NASDAQ:AMZN"
+                    },
+                    {
+                        "description": "MSFT",
+                        "proName": "NASDAQ:MSFT"
+                    },
+                    {
+                        "description": "META",
+                        "proName": "NASDAQ:META"
+                    },
+                    {
+                        "description": "GOOGL",
+                        "proName": "NASDAQ:GOOGL"
+                    }
+                ],
+                    "showSymbolLogo": true,
+                        "isTransparent": false,
+                            "displayMode": "compact",
+                                "colorTheme": "dark",
+                                    "locale": "en"
+            }
+        </script>
+</div>
+<!-- TradingView Widget END -->
     <!-- Contenedor de los slides -->
     <div class="slides">
         <!-- Slide 1: iframe -->
